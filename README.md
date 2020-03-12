@@ -41,8 +41,8 @@ Filtrando elementos html em uma lista qualquer usando expressão regular
 
 ```javascript
     let text = $(row).text() // pega todo texto da linha(tr)
-                                     .toLowerCase() // transforma em caixa baixa                                    
-                                     .match(eval("/" + value_search + "/")); // usa uma expresão regular para saber se o conjunto de caracteres do input contem no texto da linha atual
+                     .toLowerCase() // transforma em caixa baixa                                    
+                     .match(eval("/" + value_search + "/")); // usa uma expresão regular para saber se o conjunto de caracteres do input contem no texto da linha atual
 ```
 
   É algo muito simples, mas muito eficiente. Como já é sabido, a função **text()** remove toda liguagem de marcação, deixando apenas o texto, e logo após é chamada a função **match()** que recebe uma expressão regular como paramento.
