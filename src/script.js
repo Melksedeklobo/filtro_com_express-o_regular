@@ -1,6 +1,6 @@
 $(document).ready(()=>{
-    
-    $("#input_busca").on("input", (function() {
+
+    $("#input_busca").on("input", function() {
 
         let value_search = $(this).val(); // pega o valor do input
         value_search = value_search.trim().toLowerCase() // remove os espaços(trim) e coloca todos os caracteres em caixa baixa(toLowerCase)
@@ -32,5 +32,5 @@ $(document).ready(()=>{
 
         })
     
-    }))
+    })
 })
