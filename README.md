@@ -1,7 +1,6 @@
 # Filtro com expressão regular
 Filtrando elementos html em uma lista qualquer usando expressão regular
 ![demostraçao_filtro](https://user-images.githubusercontent.com/9409514/76483175-147b8c80-63f5-11ea-84dd-4830ed351e94.gif)
-
 ```javascript
   $("#input_busca").on("input", function() {
 
@@ -37,4 +36,12 @@ Filtrando elementos html em uma lista qualquer usando expressão regular
     
     })
     ```
+    ######A parti do codigo mais relevante
+    ```javascript
+    let text = $(row).text() // pega todo texto da linha(tr)
+                                     .toLowerCase() // transforma em caixa baixa                                    
+                                     .match(eval("/" + value_search + "/")); // usa uma expresão regular para saber se o conjunto de caracteres do input contem no texto da linha atual
+    ```
+    É algo muito simples, mas muito eficiente. Como já é sabido, a função **text()** remove toda liguagem de marcação, deixando apenas o texto, e logo após é chamada a função **match()** que recebe uma expressão regular como paramento.
+    Expressões regulares serve para validar entradas de dados ou fazer busca e extração de informações em textos, no nosso caso queremos saber se o texto retornado pela função **text()** contém o conjunto de caracteres que estamos buscando, e essa é a expressão mais simples que consegui pensar "**/valor/**", só que no lugar de "valor" temos que colocar o valor da variavel **value_search**, mas não podemos concatenar ela em nossa expressão, já que nas expressões regulares o simbolo "**+**" tem outro significado, a solução é criar uma expressão em uma string **"/" + value_search + "/"**, assim podemos concatenar, e por fim utilizamos a função **eval()**, que recebe a nossa expressão em string (**eval("/" + value_search + "/")**) e a retorna a nossa Expressão Regular quentinha para a função **match()**, e se a função **match()** não encontrar nada ela retorna null.
     
