@@ -37,7 +37,7 @@ Filtrando elementos html em uma lista qualquer usando expressão regular
     })
    ```
 
-### A parti do codigo mais relevante
+### A parte do codigo mais relevante
 
 ```javascript
     let text = $(row).text() // pega todo texto da linha(tr)
