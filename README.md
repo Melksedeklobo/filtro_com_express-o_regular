@@ -1,4 +1,26 @@
 # Filtro com expressão regular
+
+### update 13/08/2024
+```javascript
+
+    function handleSearchInput(event) {
+      const searchTerm = event.target.value.trim().toLowerCase();
+      const rows = document.querySelectorAll("#confirmar_contend_table tr");
+  
+      rows.forEach(row => {
+          if (row.querySelector("th")) return; // ignora a linha que tem th
+  
+          const rowText = row.textContent.toLowerCase();
+          row.style.display = rowText.includes(searchTerm) ? "" : "none"; // solução mais simples, sem necessidade de expressão regular
+      });
+  }
+
+  const searchInput = document.getElementById("imput_busca_chegada");  
+  searchInput.addEventListener("input", handleSearchInput);
+
+ ```
+
+
 Filtrando elementos html em uma lista qualquer usando expressão regular
 ![demostraçao_filtro](https://user-images.githubusercontent.com/9409514/76483175-147b8c80-63f5-11ea-84dd-4830ed351e94.gif)
 ```javascript
